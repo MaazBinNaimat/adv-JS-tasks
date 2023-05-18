@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    th {
+        font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+        padding: 6px;
+        color: brown;
+    }
+
+    td {
+        font-family: 'Courier New', Courier, monospace;
+    }
+</style>
+
+<body style="background-color: aliceblue;">
+    <table border="2" style="border-collapse: collapse; text-align: center;">
+        <thead>
+            <tr>
+                <th>Book Name</th>
+                <th>Author</th>
+                <th>Price</th>
+                <th>Edition</th>
+            </tr>
+        </thead>
+        <tbody id="body">
+
+        </tbody>
+    </table>
+
+    <script>
+        class Book {
+            constructor(name, author, price, edition) {
+                this.name = name;
+                this.author = author;
+                this.price = price;
+                this.edition = edition;
+            }
+
+            details() {
+                var x="";
+                var table = document.getElementById('body');
+              x += `
+            
+            <tr>
+              <td>${this.name}</td>
+              <td>${this.author}</td>
+              <td>${this.price}</td>
+              <td>${this.edition}</td>
+            </tr>
+          `;
+            table.innerHTML+=x;
+
+            }
+        }
+
+        let book1 = new Book("physics", "sir Ali", 10.99, 1);
+        let book2 = new Book("Math", "sir Umer", 14.99, 2);
+        let book3 = new Book("Urdu", "Miss Shabana", 19.99, 1);
+        let book4 = new Book("Adv JS", "Miss Fariha", 9.99, 3);
+        let book5 = new Book("Chemistry", "sir Kamran", 12.99, 2);
+
+        book1.details();
+        book2.details();
+        book3.details();
+        book4.details();
+        book5.details();
+    </script>
+
+</body>
+
+</html>
